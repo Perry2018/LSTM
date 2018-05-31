@@ -28,7 +28,6 @@ def data_resturcture(data,max_time,input_size,output_size):
     return inputs, labels
 
 def LSTM_constructor(inputs,layers_units,state_keep_probs):
-    # layers_sizes is a sequence of positive integers
 
     def _create_one_cell(units,state_keep_prob):
         lstm_cell = tf.nn.rnn_cell.LSTMCell(units)
@@ -92,7 +91,4 @@ class LSTMPredict(object):
         inputs = data_check(data,self.max_time,self.input_size)
         outputs = self.sess.run(self.outputs, {self.inputs:inputs})
         return outputs[0]
-
-
-
 
